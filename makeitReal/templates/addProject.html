@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+
+
+{% block body %}
+
+<style>
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    input[type=submit] {
+      width: 100%;
+      background-color: var(--main-color);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 20px;
+      transition: all 0.5s ;
+    }
+    
+    input[type=submit]:hover {
+        background-color: white;
+      color: var(--main-color);
+    }
+
+    input[type = file]{
+      margin: 8px 0;
+
+    }
+    
+    .form-div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    </style>
+
+
+
+
+<div class="container">
+    
+    
+
+    <div class="form-div">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.name.label}}
+            {{form.name}}
+            {{form.describtion.label}}
+            {{form.describtion}}
+
+            <!-- {{form.question_1.label}} -->
+            <p>Why did you come up with this project? What pushed you to thus idea?</p>
+            {{form.question_1}}
+
+            <p>What is worth of your project? How can it help our society?</p>
+            {{form.question_2}}
+
+            <p>What is your main goal? How do you see your project in the future(2 years, 5 years)?</p>
+            {{form.question_3}}
+
+            {{form.category.label}}
+            {{form.category}}
+
+            {{form.image.label}}
+            {{form.image}}
+
+            <input type="submit" value="Creat Project">
+        
+          
+        </form>
+    </div>
+</div>
+
+
+  
+{% endblock body %}

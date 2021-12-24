@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+
+
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" href="{%static 'css/contact.css' %}">
+
+<div class="about">
+    <div class="container">
+        <div class="info">
+            <h1>Keep in touch</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+                optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+                obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+                nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+                tenetur error, harum nesciunt ipsum debitis quas aliquid.
+            </p>
+
+            <div class="contact-infos">
+                <div class="phone">
+                    <i class="fas fa-phone"></i>
+                    <p>+1 990 00 00 00</p>
+                </div>
+
+                <div class="mail">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@makeitreal.com</p>
+                </div>
+            </div>
+
+        </div>
+    
+        <div class="contact">
+            <div class="card">
+                <h1>Contact Us</h1>
+                
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="two-input">
+                        <!-- <input type="text" placeholder="First Name">
+                        <input type="text" placeholder="Last Name"> -->
+                        {{form.first_name}}
+                        {{form.last_name}}
+                        {{form.email}}
+                        {{form.message}}
+                    </div>
+    
+                    <!-- <div class="two-input">
+                        <input type="email" placeholder="Email">
+                        <textarea placeholder="Message"></textarea>
+                    </div> -->
+    
+                    <div class="submit-btn">
+                        <button>SUBMIT</button>
+                    </div>
+    
+                </form>
+            </div>
+        
+    
+                
+                
+                
+    
+        </div>
+    </div>
+    
+  
+</div>
+
+{% endblock body %}

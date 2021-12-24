@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{%static 'css/index.css' %}">
+    <link rel=" icon" href="{%static 'images/logo.png'%} " sizes="32x32 64x64"/>
+
+  
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c6c168a6f6.js" crossorigin="anonymous"></script>
+
+
+   
+
+
+
+
+    <title>Index</title>
+
+</head>
+<body>
+
+
+<section class="nav">
+    <div class="container">
+        <div class="nav-top">
+            <a href="{%url 'index'%}"><img class="logo" src="{%static 'images/logo.png' %}" alt=""></a>
+            
+            <ul class="nav-top-ul">
+                <a href="{%url 'all'%}">
+                    <li>Projects</li>
+                </a>
+                <a href="">
+                    <li>News</li>
+                </a>
+                <a href="">
+                    <li>Blogs</li>
+                </a>
+                <a href="{%url 'about'%}">
+                    <li>About</li>
+                </a>
+                <a href="{%url 'contact'%}">
+                    <li>Contact</li>
+                </a>
+                
+                
+            </ul>
+            
+            <div class="btn ">
+                <a><i class="fas fa-user"></i> {{user.username}}</a>
+                <div class="dropdown-content">
+                    
+                        <ul>
+                            <a href="{%url 'profile'%}">
+                                <li>Profile</li>
+                            </a>
+                            
+                            <a href="{%url 'logout'%}">
+                                <li>Log out</li>
+                            </a>
+                            
+
+                            
+                        </ul>
+                    
+                    
+                </div>
+            </div>
+            <a href="{%url 'addproject'%}" class="btn">
+                <i class="fas fa-plus"></i> Start Project
+                
+            </a>
+            <!-- <a class="btn" ><i class="fas fa-user"></i> Muzaffar</a> -->
+        </div>
+        
+
+       
+
+
+    </div>
+
+    
+
+</section>
+
+{% block body %}
+  
+{% endblock body %}
+
+
+
+
+
+
+
+
+
+<!-- <section class="footer">
+    <img src="{%static 'images/footer.png" alt="">
+    <div class="container">
+        <div class="about">
+            <h1>About</h1>
+            <ul>
+                
+                <a href=""><li>About Us</li></a>
+                <a href=""><li>Our Mission</li></a>
+                <a href=""><li>Our Goals</li></a>
+                
+                
+            </ul>
+        </div>
+
+        <div class="support">
+            <h1>Support / Partner</h1>
+            <ul>
+
+                <a href=""><li>Contact</li></a>
+                <a href=""><li>Help Center</li></a>
+                <a href=""><li>Our Rules</li></a>
+                
+                
+                
+            </ul>
+        </div>
+
+        <div class="plans">
+            <h1>Future Plans</h1>
+            <ul>
+
+                <a href=""><li>Development</li></a>
+                <a href=""><li>New Features</li></a>
+                
+                
+            </ul>
+        </div>
+
+        <div class="social-media">
+            <h1>Follow Us</h1>
+
+            <ul>
+                <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                
+            </ul>
+
+        </div>
+        
+    
+    </div>
+
+    
+
+</section> -->
+
+
+</body>
+</html>

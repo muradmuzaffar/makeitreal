@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static '/css/landing.css' %}">
+    <title>MakeitReal</title>
+</head>
+<body>
+
+    <div class="start">
+
+        <img class="landing-background" src="{%static '/images/landing-photo.png' %}" alt="">
+        <a class="btn" href="{%url 'login'%}">Start Makeitreal</a>
+        
+
+        
+
+    </div>
+
+    <div class="helps">
+        <div class="container">
+            <h1>MAKEITREAL Helps</h1>
+            <hr>
+
+            <div class="organizations">
+
+                <div class="organization">
+                    <img src="{%static '/images/islamic.png' %}" alt="">
+                    <p>Islamic Organizations</p>
+                </div>
+
+                <div class="organization">
+                    <img src="{%static '/images/creative-projects.png' %}" alt="">
+                    <p>Creative Projects</p>
+                </div>
+
+                <div class="organization">
+                    <img src="{%static '/images/politics.png' %}" alt="">
+                    <p>Politics</p>
+                </div>
+
+                <div class="organization">
+                    <img src="{%static '/images/pets.png' %}" alt="">
+                    <p>Pets & Animals</p>
+                </div>
+
+                <div class="organization">
+                    <img src="{%static '/images/trips.png' %}" alt="">
+                    <p>Trips & Adventures</p>
+                </div>
+
+                <div class="organization">
+                    <img src="{%static '/images/nonprofit.png' %}" alt="">
+                    <p>Non-profit & Charity</p>
+                </div>
+
+                <div class="organization">
+                    <img src="{%static '/images/kids.png' %}" alt="">
+                    <p>Kids & Family</p>
+                </div>
+
+                <div class="organization">
+                    <img src="{%static '/images/clubs.png' %}" alt="">
+                    <p>Clubs & Community</p>
+                </div>
+
+                <div class="organization">
+                    <img src="{%static '/images/funs.png' %}" alt="">
+                    <p>Funs & Animals</p>
+                </div>
+
+                
+
+                <div class="organization">
+                    <img src="{%static '/images/schools.png' %}" alt="">
+                    <p>Schools & Education</p>
+                </div>
+
+                <div class="organization">
+                    <img src="{%static '/images/sports.png' %}" alt="">
+                    <p>Sports & Teams</p>
+                </div>
+
+                <div class="organization">
+                    <img src="{%static '/images/medical.png' %}" alt="">
+                    <p>Medical & Health</p>
+                </div>
+
+
+
+
+            </div>
+
+            
+        </div>
+        
+
+    </div>
+
+
+    <div class="contact">
+        <img class="registration-background" src="{%static '/images/register-background.png' %}" alt="">
+        <div class="container">
+
+            <h1>Contact Us</h1>
+            
+            <form method="POST">
+                {% csrf_token %}
+                <div class="two-input">
+                    <!-- <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Last Name"> -->
+                    {{form.first_name}}
+                    {{form.last_name}}
+                    {{form.email}}
+                    {{form.message}}
+                </div>
+
+                <!-- <div class="two-input">
+                    <input type="email" placeholder="Email">
+                    <textarea placeholder="Message"></textarea>
+                </div> -->
+
+                <div class="submit-btn">
+                    <button>SUBMIT</button>
+                </div>
+
+            </form>
+            
+            
+        </div>
+    </div>
+
+
+    
+    
+</body>
+</html>

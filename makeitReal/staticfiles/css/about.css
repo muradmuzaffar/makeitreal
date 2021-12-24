@@ -1,0 +1,25 @@
+.about-section {
+  display: flex;
+  margin-top: 80px;
+  justify-content: space-between;
+}
+
+.about-section img {
+  border-radius: 10px;
+}
+
+.about-section p {
+  display: flex;
+  align-items: center;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.social-media i {
+  color: var(--main-color) !important;
+  margin: 100px 0;
+}

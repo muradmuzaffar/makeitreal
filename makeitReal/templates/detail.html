@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+<style>
+  .answer{
+    color: var(--main-color);
+    margin-left: 20px !important;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  img{
+    margin: 50px 0;
+  }
+
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: var(--main-color);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.5s ;
+  }
+  
+  input[type=submit]:hover {
+      background-color: white;
+    color: var(--main-color);
+  }
+
+  .desc{
+    margin: 30px 0;
+  }
+
+</style>
+
+<div class="container" style="padding-left: 50px;margin-top:80px">
+  <!-- <p><b></b></p> -->
+  <h2 class="question">Why did you come up with this project? What pushed you to thus idea?</h2>
+  <p class="answer">{{project.question_1}}</p>
+
+  <h2 class="question">Why did you come up with this project? What pushed you to thus idea?</h2>
+  <p class="answer">{{project.question_2}}</p>
+
+  <h2 class="question">Why did you come up with this project? What pushed you to thus idea?</h2>
+  <p class="answer">{{project.question_3}}</p>
+  <img style="width: 100%" src="{{project.image.url}}" alt="">
+  <p class="desc">
+    {{project.describtion}}
+  </p>
+
+  <!-- Comment Show -->
+
+
+  {% if comments %}
+          {% for comment in comments %}
+          <div style="margin: 30px 0;" class="media mb-4">
+              <!-- <img class="d-flex mr-3 rounded-circle"  src="{{project.image.url}}" alt=""> -->
+              <div class="media-body">
+                <h2 style="margin-bottom: 10px;" class="mt-0">{{comment.comment_author}}</h2>
+                <p>
+                    {{comment.comment_text}}
+                </p>
+              
+              </div>
+          </div>
+          {% endfor %}
+
+          
+  {% endif %}
+
+
+
+<!-- Add Comment -->
+
+<form method="POST" action="{%url 'comment' project.id%}" >
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="uname">Comment:</label>
+      <input type="text" name="comment_text" class="form-control" rows="3"></input>
+    </div>
+    <button type="submit" class="btn btn-primary">Comment</button>
+  </form>
+  
+</div>
+
+
+
+
+{% endblock body %}

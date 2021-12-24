@@ -1,0 +1,337 @@
+
+{% extends "base.html" %}
+    
+
+
+    
+
+{% block body %}
+
+<style>
+    hr{
+        margin: 200px 0 !important;
+    }
+
+    
+</style>
+
+
+{% load static %}
+  
+
+    <section class="slider">
+
+
+                <div class="mySlides fade">
+                  <img src="{%static 'images/carousel-photo-1.png' %}" >
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="{%static 'images/slider-1.jpg' %}" >
+                  </div>
+
+                <div class="mySlides fade">
+                    <img src="{%static 'images/slider-2.jpg' %}" >
+                </div>
+                
+                
+                
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            <br>
+                
+            <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span> 
+                  <span class="dot" onclick="currentSlide(2)"></span> 
+                  <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+
+        </section>
+
+
+
+    <section class="projects">
+        <div class="container">
+            <h1 class="prj-title">Latest Projects</h1>
+            
+
+            {% for project in projects  %}
+              
+            
+             <div class="project-str">
+                <img class="project-img"  src="{{project.image.url}}" alt="">
+                <div class="about-project">
+
+                   <a href="{%url 'detail' project.id%}" class="prj-name"><h1>{{project.name}}</h1></a> 
+                    
+                    <div class="project-content">
+                        {{project.describtion}}
+                        
+                    </div>
+
+                    <div class="first-infos">
+                        <p>by {{project.user}}</p>
+                        <p >{{project.created_date}}</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            {% endfor %}
+
+            
+
+            <div class="show-mr" >
+                <a  href="#">SHOW MORE</a>
+
+            </div>
+            
+          
+
+           
+
+
+
+        </div>
+    </section>
+
+    <hr>
+
+
+    <section class="subs">
+        <form class="mail-form">
+
+            <input class="mail-input" type="text" id="fname" name="firstname" placeholder="Your email..">
+            <input class="button-input" type="submit" value="Subscribe">
+          </form>
+    </section>
+
+    <hr>
+
+    <section class="projects">
+        <div class="container">
+            <h1 class="prj-title">Latest Blogs</h1>
+            
+
+            {% for blog in blogs  %}
+              
+            
+             <div class="project-str">
+                <div style="margin-right: 70px !important;"  class="about-project">
+
+                    <a href="{%url 'detail' blog.id%}" class="prj-name"><h1>{{blog.name}}</h1></a> 
+                     
+                     <div class="project-content">
+                         {{blog.describtion}}
+                         
+                     </div>
+ 
+                     <div class="first-infos">
+                         <p>by {{blog.user}}</p>
+                         <p >{{blog.created_date}}</p>
+                     </div>
+                 </div>
+                <img class="project-img"  src="{{blog.image.url}}" alt="">
+                
+            </div>
+
+            
+            {% endfor %}
+
+        </div>
+    </section>
+
+    <hr>
+
+
+    <section class="projects">
+        <div class="container">
+            <h1 class="prj-title">Latest News</h1>
+            
+
+            {% for new in news  %}
+              
+            
+             <div class="project-str">
+                <img class="project-img"  src="{{new.image.url}}" alt="">
+                <div class="about-project">
+
+                    <a href="{%url 'detail' new.id%}" class="prj-name"><h1>{{new.name}}</h1></a> 
+                     
+                     <div class="project-content">
+                         {{new.describtion}}
+                         
+                     </div>
+ 
+                     <div class="first-infos">
+                         <p>by {{new.user}}</p>
+                         <p >{{new.created_date}}</p>
+                     </div>
+                 </div>
+                
+                
+            </div>
+
+            
+            {% endfor %}
+
+        </div>
+    </section>
+    <hr>
+
+
+    <section class="team">
+        <div class="container">
+            <h1 class="team-title">Our Team</h1>
+            <p class="team-subtitle">that it has a more-or-less normal distribution of letters, as</p>
+            
+            <div class="team-players">
+                <div class="team-player">
+                    <img src="{%static 'images/team_woman.png' %}" alt="">
+                    <div class="overlay">
+                        <div class="team-social">
+                            <ul>
+                                <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <h1 id="player-name">Nigar Murtuzayeva</h1>
+                    <p id="player-position" >Operational Manager</p>
+                </div>
+
+                <div class="team-player">
+                    <img src="{%static 'images/team_man.png' %}" alt="">
+                    <div class="overlay">
+                        <div class="team-social">
+                            <ul>
+                                <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <h1 id="player-name">Nihad Ibadov</h1>
+                    <p id="player-position" >Project Manager</p>
+                </div>
+
+                <div class="team-player">
+                    <img src="{%static 'images/team_man2.jpg' %}" alt="">
+                    <div class="overlay">
+                        <div class="team-social">
+                            <ul>
+                                <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/heyder-ismay%C4%B1lov-8129001b6/"><i class="fab fa-linkedin"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <h1 id="player-name">Geidar Ismailov</h1>
+                    <p id="player-position" >Investor</p>
+                </div>
+
+                <div class="team-player">
+                    <img src="{%static 'images/team-woman2.png' %}" alt="">
+                    <div class="overlay">
+                        <div class="team-social">
+                            <ul>
+                                <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <h1 id="player-name">Ceferova Alsu</h1>
+                    <p id="player-position" >Marketing Manager</p>
+                </div>
+
+                <div class="team-player">
+                    <img src="{%static 'images/team_man4.jpg' %}" alt="">
+                    <div class="overlay">
+                        <div class="team-social">
+                            <ul>
+                                <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <h1 id="player-name">Tagi Guliyev</h1>
+                    <p id="player-position" >Graphic Designer</p>
+                </div>
+
+                <div class="team-player">
+                    <img src="{%static 'images/team_man3.jpg' %}" alt="">
+                    <div class="overlay">
+                        <div class="team-social">
+                            <ul>
+                                <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <h1 id="player-name">Murad Muzaffar</h1>
+                    <p id="player-position" >Software Developer</p>
+                </div>
+
+               
+
+               
+            </div>
+        
+        </div>
+        
+    </section>
+
+
+
+    
+
+
+    
+
+        
+    <script>
+        // Carosel
+        var slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+
+//End Carousel
+    </script>
+
+    {% endblock body %}
+
+

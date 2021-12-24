@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{%static 'css/register.css' %}">
+
+    <title>Register</title>
+
+    <style>
+        body{
+            background-image: url("{%static 'images/register-background.png' %}");
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h3>REGISTER</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+
+
+            <div class="two-input">
+                <div class="input-label">
+                    {{register_form.first_name.label}}
+                    {{register_form.first_name}}
+                </div>
+
+                <div class="input-label">
+                    {{register_form.last_name.label}}
+                    {{register_form.last_name}}
+                    
+                </div>
+            </div>
+
+            <div class="two-input">
+                <div class="input-label">
+                    {{register_form.username.label}}
+                    {{register_form.username}}
+                </div>
+
+                <div class="input-label">
+                    {{register_form.email.label}}
+                    {{register_form.email}}
+                    
+                </div>
+            </div>
+
+            <div class="two-input">
+                <div class="input-label">
+                    {{register_form.password1.label}}
+                    {{register_form.password1}}
+                </div>
+
+                <div class="input-label">
+                    {{register_form.password2.label}}
+                    {{register_form.password2}}
+                    
+                </div>
+            </div>
+
+            <!-- {{register_form.username}}
+            {{register_form.password}}
+            {{register_form.password2}} -->
+
+            
+
+            
+                
+            <button class="submit-btn">SUBMIT</button>
+        </form>
+
+        
+
+        <div class="text">
+            <p>Have you got account?</p> <a href="{%url 'login' %}">Log in</a>
+            
+        </div>
+
+        
+
+
+    
+
+    </div>
+
+
+    
+    
+</body>
+</html>

@@ -1,0 +1,500 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Mega&display=swap");
+
+:root {
+  --main-color: #458ff6;
+  --second-color: #fff;
+}
+
+/* Carousel */
+
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 110vh;
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 40px; */
+}
+
+/* Slideshow container */
+.slider .container {
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  /* width: 10%;
+  height: 100%; */
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  margin-bottom: 50px;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+}
+
+/* END Carousel */
+
+body {
+  font-family: "Lexend Mega", sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  zoom: 0.75;
+  /* background-color: #f1f1f1; */
+  /* background-color: #eee; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+.container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Nav Section */
+
+.nav {
+  margin-bottom: 100px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  background-color: var(--second-color);
+  color: var(--main-color);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--second-color);
+
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: var(--main-color);
+  transition: all 0.4s ease;
+  padding: 5px;
+}
+
+.dropdown-content a:hover {
+  background-color: #e4e4e4;
+}
+
+.btn:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dropdown-content ul li {
+  margin: 10px 5px;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.container .btn {
+  background: var(--main-color);
+  color: var(--second-color);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+  /* border-radius: 17.5px; */
+  border: none;
+  color: white;
+  padding: 12px 48px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 50px;
+  transition: all 0.5s ease;
+}
+
+.container .btn:hover {
+  background: var(--second-color);
+  color: var(--main-color);
+}
+
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-top-ul {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.nav-top-ul li {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 50px;
+}
+
+.nav-top-ul li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-top-ul li:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Project Section */
+
+.prj-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 56px;
+  line-height: 30px;
+  margin-top: 80px;
+  margin-bottom: 120px;
+
+  color: #264653;
+}
+
+.project-str {
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 70px;
+}
+
+.first-infos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 47%;
+  margin-left: auto;
+}
+
+.project-img {
+  width: 47%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.project-img:hover {
+  transform: scale(1.1);
+}
+
+.project-content {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #264653;
+  margin: 30px 0;
+}
+
+.prj-name {
+  transition: all 0.7s ease;
+  color: var(--main-color);
+  font-size: 24px;
+}
+
+.prj-name:hover {
+  opacity: 0.6;
+}
+
+.show-mr {
+  font-size: 36px;
+  line-height: 30px;
+  color: var(--main-color);
+  text-align: center;
+  margin-top: 150px;
+}
+
+.show-mr a {
+  transition: all 0.7s ease;
+}
+
+.show-mr a:hover {
+  opacity: 0.6;
+}
+
+/* TEAM PLAYERS SECTION */
+
+.team {
+  zoom: 0.9;
+}
+
+.team-players {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.team-player {
+  width: 30%;
+  margin: 30px 0;
+  text-align: center;
+  position: relative;
+}
+
+.team-player img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-player:hover .overlay {
+  opacity: 0.8;
+}
+
+.team-social ul {
+  display: flex;
+}
+
+.team-social ul li {
+  margin: 0 25px;
+}
+
+.fab {
+  font-size: 40px;
+  color: white;
+}
+
+.team-title {
+  text-align: center;
+  font-size: 36px;
+  line-height: 45px;
+  /* identical to box height */
+
+  /* 1 */
+
+  color: #264653;
+}
+
+.team-subtitle {
+  text-align: center;
+  margin: 30px 0;
+}
+
+#player-name {
+  margin: 75px 0;
+  font-size: 27px;
+}
+
+#player-name {
+  margin: 10px 0;
+}
+
+/* Footer */
+
+.footer {
+  margin-top: 50px;
+  padding: 60px 0;
+  background-color: var(--main-color);
+  position: relative;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .container h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.footer .container ul li {
+  margin-top: 10px;
+  color: var(--second-color);
+}
+
+.social-media ul {
+  display: flex;
+}
+
+.social-media ul li {
+  margin-right: 25px;
+}
+
+.social-media ul li a i {
+  font-size: 40px;
+}
+
+.subs {
+  background-color: var(--main-color);
+  margin: 150px;
+  width: 100%;
+  height: 400px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mail-input {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  height: 70px;
+  font-size: 20px;
+}
+
+.button-input {
+  width: 15%;
+  background-color: var(--main-color);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 70px;
+  width: 180px;
+  font-size: 27px;
+  font-weight: bold;
+  transition: all 0.5s ease;
+}
+
+.button-input:hover {
+  background-color: #8abbff;
+}
+
+.mail-form {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

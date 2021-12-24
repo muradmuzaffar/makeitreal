@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/login.css' %}">
+    <title>Document</title>
+</head>
+
+
+<style>
+    body {
+        font-family: "Lexend Mega", sans-serif;
+        background-image: url("{%static 'images/register-background.png ' %}");
+        display: flex;
+        justify-content: center;
+        zoom: 0.9;
+      }
+</style>
+
+
+<body>
+
+    
+
+    
+    
+    <div class="card">
+        <h3>Login</h3>
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="two-input">
+                <!-- <input  type="text" placeholder="First Name">
+                <input  type="password" placeholder="Password"> -->
+                <p>Username</p>
+                {{login_form.username}}
+                <p>Password</p>
+                {{login_form.password}}
+            </div>
+
+            
+            
+            <div class="btn">
+                <button class="submit-btn">SUBMIT</button>
+            </div>
+            
+        </form>
+
+        
+
+        
+
+        <div class="text">
+            <a href="">Do not have any account? / <a href="{%url 'register'%}">Register</a></a>
+            <!-- <p>Have you got account?</p> <a href="http://127.0.0.1:5500/templates/login.html">Log in</a> -->
+            
+        </div>
+
+        
+
+
+    
+
+    </div>
+
+
+    <!-- <div class="text">
+            <a class="register-link">Forgot your password?</a>
+        </div>
+
+        <div class="text text-1">
+            New to Makeitreal? 
+            <a class="register-link">  Sign up</a>
+        </div> -->
+
+   
+
+    
+    
+</body>
+</html>
